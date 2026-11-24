@@ -1,0 +1,20 @@
+{
+  "name": "mision-404-academia",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Juego educativo con Node, MongoDB Atlas y ranking persistente",
+  "main": "server.js",
+  "scripts": {
+    "build": "node scripts/check-project.js",
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongodb": "^6.12.0"
+  }
+}

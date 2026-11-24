@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171329">
+  <title>Misión 404 · Academia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Volver al inicio">
+      <span class="brand-mark">404</span>
+      <span><b>Misión 404</b><small>Academia en recuperación</small></span>
+    </a>
+    <div id="connection" class="connection checking"><span></span> Comprobando Atlas</div>
+  </header>
+
+  <main>
+    <section id="introView" class="view active">
+      <div class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">INCIDENCIA CRÍTICA · ACADEMIA 404</p>
+          <h1>Cinco servicios caídos.<br><em>Una misión para recuperarlos.</em></h1>
+          <p class="lead">Acceso, matrículas, horarios, aula virtual y certificados están bloqueados. Resuelve las pruebas, restaura el sistema y entra en la clasificación.</p>
+          <form id="startForm" class="start-form">
+            <label for="player">Tu alias de operador</label>
+            <div class="input-row">
+              <input id="player" name="player" minlength="2" maxlength="20" placeholder="Ejemplo: Operador Ana" autocomplete="off" required>
+              <button class="button primary" type="submit">Iniciar recuperación <span>→</span></button>
+            </div>
+            <p id="startError" class="form-error" role="alert"></p>
+          </form>
+          <div class="facts">
+            <span>5 misiones</span><span>500 puntos</span><span>Datos en MongoDB</span>
+          </div>
+        </div>
+        <div class="hero-art" role="img" aria-label="Centro de control futurista de una academia"></div>
+      </div>
+      <div class="section-heading"><div><p class="eyebrow">CENTRO DE CONTROL</p><h2>Estado de los servicios</h2></div><span id="introCounter" class="counter">0 / 5 recuperados</span></div>
+      <div id="introModules" class="module-grid"></div>
+      <section class="leaderboard-panel">
+        <div class="section-heading"><div><p class="eyebrow">CLASIFICACIÓN</p><h2>Mejores operadores</h2></div><button id="refreshBoard" class="button ghost" type="button">Actualizar</button></div>
+        <div id="leaderboard" class="leaderboard"><p class="empty">Cargando clasificación…</p></div>
+      </section>
+    </section>
+
+    <section id="gameView" class="view">
+      <div class="game-head">
+        <div><p class="eyebrow">OPERADOR <span id="operatorName"></span></p><h2 id="challengeTitle">Recuperación en curso</h2></div>
+        <div class="metrics"><div><small>PUNTOS</small><strong id="score">0</strong></div><div><small>TIEMPO</small><strong id="timer">00:00</strong></div><div><small>SERVICIOS</small><strong id="restoredCount">0/5</strong></div></div>
+      </div>
+      <div class="progress"><span id="progressBar"></span></div>
+      <div class="game-layout">
+        <aside><div id="gameModules" class="module-stack"></div></aside>
+        <section class="challenge-card">
+          <div class="challenge-number" id="challengeNumber">MISIÓN 01</div>
+          <h3 id="question">Preparando misión…</h3>
+          <div id="options" class="options"></div>
+          <div id="hintBox" class="hint-box hidden"></div>
+          <div id="feedback" class="feedback hidden"></div>
+          <div class="challenge-actions">
+            <button id="hintButton" class="button ghost" type="button">Solicitar pista · −25</button>
+            <button id="answerButton" class="button primary" type="button" disabled>Comprobar respuesta</button>
+            <button id="nextButton" class="button primary hidden" type="button">Siguiente misión →</button>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="resultView" class="view">
+      <div class="result-card">
+        <div class="success-orbit"><span>✓</span></div>
+        <p class="eyebrow">INFORME DE RECUPERACIÓN</p>
+        <h1 id="resultTitle">Sistema recuperado</h1>
+        <p id="resultText" class="lead"></p>
+        <div id="resultModules" class="module-grid compact"></div>
+        <div class="result-stats">
+          <div><strong id="finalScore">0</strong><small>PUNTOS</small></div>
+          <div><strong id="finalCorrect">0/5</strong><small>ACIERTOS</small></div>
+          <div><strong id="finalHints">0</strong><small>PISTAS</small></div>
+          <div><strong id="finalTime">00:00</strong><small>TIEMPO</small></div>
+        </div>
+        <div class="result-actions"><button id="playAgain" class="button primary">Nueva misión</button><button id="showRanking" class="button ghost">Ver clasificación</button></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><p>Misión 404 · Proyecto educativo con Node.js y MongoDB Atlas</p><p>Los alias y resultados de las partidas se guardan en la base de datos.</p></footer>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="/app.js" defer></script>
+</body>
+</html>
