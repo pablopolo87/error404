@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: mision-404-academia
+    name: mision-404-concurso
     runtime: node
     plan: free
     buildCommand: npm install && npm run build

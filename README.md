@@ -1,6 +1,20 @@
-# Misión 404 · Academia
+# Misión 404 · Concurso
 
 Juego educativo completo con frontend, servidor Node/Express y persistencia en MongoDB Atlas. El alumnado debe recuperar cinco servicios de una academia: acceso, matrículas, horarios, aula virtual y certificados.
+
+## Novedades de la versión 2
+
+- Conserva el modo individual.
+- Añade un concurso por turnos inspirado en los juegos de pulsadores.
+- Modalidad de duelo para dos operadores.
+- Modalidad de dos equipos, con hasta cuatro integrantes por equipo.
+- En cada ronda, el operador de turno elige una categoría: Seguridad, Redes, Datos o Vida académica.
+- Preguntas con cuatro botones de colores.
+- Preguntas de texto y preguntas para analizar imágenes.
+- Si el primer participante falla, el equipo o rival contrario dispone de un rebote por 50 puntos.
+- Ocho rondas, marcador actualizado y resultado final.
+
+El concurso se abre desde el botón **Abrir concurso** de la portada o directamente en `/duel.html`.
 
 ## Qué incluye
 
@@ -57,6 +71,9 @@ La aplicación utiliza:
 - Base de datos: `mision_404`
 - Colección `challenges`: cinco misiones.
 - Colección `runs`: partidas, puntuaciones y servicios recuperados.
+- Colección `rooms`: salas temporales, participantes, turnos y puntuaciones de los duelos o equipos.
+
+Las salas caducan automáticamente seis horas después de crearse. No es necesario crear `rooms` manualmente.
 
 Para una prueba temporal puedes permitir `0.0.0.0/0` en Network Access, preferiblemente con caducidad. Elimina esa regla al terminar y no guardes datos personales reales.
 

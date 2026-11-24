@@ -1,8 +1,8 @@
 {
-  "name": "mision-404-academia",
-  "version": "1.0.0",
+  "name": "mision-404-concurso",
+  "version": "2.0.0",
   "private": true,
-  "description": "Juego educativo con Node, MongoDB Atlas y ranking persistente",
+  "description": "Concurso educativo por turnos, duelos y equipos con MongoDB Atlas",
   "main": "server.js",
   "scripts": {
     "build": "node scripts/check-project.js",
